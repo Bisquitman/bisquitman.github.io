@@ -1,0 +1,81 @@
+.library {
+  &__header {
+    position: relative;
+    margin-bottom: 15px;
+
+    &:before {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 174px;
+      height: 174px;
+      top: -55px;
+      left: -46px;
+      background-color: #FF0000;
+      filter: blur(150px);
+      z-index: -1;
+
+      @include tablet {
+        content: none;
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.23;
+    margin-bottom: 8px;
+  }
+
+  &__count {
+    font-size: 14px;
+    line-height: 120%;
+    color: $secondary;
+    margin-bottom: 25px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 26px;
+    max-width: 780px;
+  }
+
+  &__list-container {
+    @media (max-width: 375px) {
+      padding: 0 12px;
+    }
+  }
+
+  &__add-btn {
+    padding: 8px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    outline: none;
+    background-color: $primary;
+    color: $light;
+    transition: background-color 0.36s ease-in-out, outline-color 0.36s ease-in-out;
+
+    &:hover {
+      background-color: $primary-light;
+    }
+
+    &:disabled {
+      background-color: $secondary;
+    }
+
+    &:active,
+    &:focus {
+      border-color: $light;
+    }
+  }
+
+  &__footer {
+    @include laptop {
+      display: none;
+    }
+  }
+}
