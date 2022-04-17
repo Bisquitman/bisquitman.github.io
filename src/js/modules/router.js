@@ -1,8 +1,9 @@
 import Navigo from 'navigo';
-import {renderListBooks} from './renderListBooks.js';
-import {renderBook} from "./renderBook.js";
+import { renderListBooks } from './renderListBooks.js';
+import { renderBook } from "./renderBook.js";
 
-export const router = new Navigo(location.pathname, {
+// location.pathname = '/'
+export const router = new Navigo('/', {
   hash: true,
 });
 
@@ -27,7 +28,7 @@ export const initRouter = () => {
       document.body.classList.remove('body_gradient');
       renderListBooks();
     },
-    'book': ({params: {id}}) => {
+    'book': ({ params: { id } }) => {
       closeAllPages();
       book.classList.remove('hide');
       document.body.classList.add('body_gradient');
